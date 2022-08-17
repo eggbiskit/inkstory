@@ -14,6 +14,7 @@ The curve of my blade. The blood pools out.
     
 == nighttime3 ==
 Four is a good number. But...not too many to brag about.
+I might get front page in the papers tomorrow. The memorable ones always get a moniker.
 
 * <i>MOP UP THE BLOOD, DON'T GET CAUGHT.</i> /*make variable?*/
     ->mop
@@ -43,5 +44,7 @@ My conscience has not yet caught up with me. Blood runs faster.
     ->witness
     
 == witness ==
-Your shadow betrays you. What good is light when darkness is merely at the edge of it?
+YOUR SHADOW BETRAYS YOU.
+
+I retreat back into the dark cover of the room. The lock clicks, and I squeeze my knife in anticipation.
 ->DONE /*cut back to detective*/

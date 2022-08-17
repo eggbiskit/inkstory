@@ -1,11 +1,10 @@
 /*START STORY*/-> mornings
 
 == mornings ==
-When the sun rises, I rise. It's also true the other way around, but no one believes me.
+Nowadays, I wake up at sunrise. I've been getting pretty good at it - like I wake up on the <i>dot<\i>.
 
-A quick glance at my watch prompts me to wait on the porch. It wasn't to retrieve the paper, but to thank the paperboy when he rode by.
-
-Cyclists ride at a steady pace of 18 mph, and factoring in the time it took to throw and for him to ride over that hill, he should be here at...
+A quick glance at my watch prompts me to wait on the porch. 
+Cyclists ride at a steady pace of 18 mph, and factoring in the time it took for him to ride over that hill, he should be here at...
 
 + 6:08:23 AM.
     ->getpaper
@@ -29,29 +28,22 @@ If there's something I'm always right about, it's the time. Speaking of, it's ti
 == work ==
 ...
 
-Traffic is a challenge to others. So many variables in our fast lives to consider, all to arrive at the same slow, monotonous pace in the morning. <i>Is it because I overslept?</i> or <i>Why did I bother with the coffee!!</i>
+Despite my exceptional time-management skills, even I cannot avoid traffic. The honking makes me restless. The red stoplight, red car in front of me, red sun...
 
 + PEOPLE ARE DYING. I CANNOT DO ANYTHING.
     ->case
 
 == case ==
-I accept that my morning is ruined. It has been, for weeks now. 
-<i>Variables? Deduction? Method?</i>
-Why does it matter if I cannot catch the killer? No...
+I look away and fold down the sun visor in the car, but the damage is done. A red shape remains burned into my retinas.
 
-+ This power is meaningless.
-    -> powermeaningless
-+ This power is what I need.
-    ->powerneed
+Dejected, I close my eyes.
 
-== powermeaningless ==
-...
-    ->office
-
-== powerneed ==
-...
-    ->office
+All I need is a trail of blood that leads to a pair of hands. <i>And there's been more than enough of that already.</i>
+->office
     
 == office ==
+...
+I retreat to my shoebox-sized "office". Four pieces of cardboard compactly propped around a desk.
+
 I arrive to another victim. The fourth one to land atop my desk.
 ->DONE /*cut to killer*/
