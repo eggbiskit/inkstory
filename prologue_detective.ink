@@ -39,6 +39,8 @@ I look away and fold down the sun visor in the car, but the damage is done. A re
 Dejected, I close my eyes.
 
 All I need is a trail of blood that leads to a pair of hands. <i>And there's been more than enough of that already.</i>
+
++ Drive.
 ->office
     
 == office ==
@@ -46,4 +48,4 @@ All I need is a trail of blood that leads to a pair of hands. <i>And there's bee
 I retreat to my shoebox-sized "office". Four pieces of cardboard compactly propped around a desk.
 
 I arrive to another victim. The fourth one to land atop my desk.
-->DONE /*cut to killer*/
+->DONE // cut to prologue_killer
