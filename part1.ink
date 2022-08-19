@@ -1,10 +1,15 @@
-//DETECTIVE PROLOGUE
+//DETECTIVE PROLOGUE 
+->chapter1
+
+== chapter1 ==
+<center> <b>CHAPTER 1</b>
+
 VAR TIME1 = false
 VAR TIME2 = false
 VAR TIME3 = false
 VAR CASE4 = false
 
-Nowadays, I wake up at sunrise. I've been getting pretty good at it - like I wake up on the <i>dot<\i>.
+Nowadays, I wake up at sunrise. I've been getting pretty good at it. I see the sun peek through the rooftops, washing everything in a reddish hue.
 
 A quick glance at my watch prompts me to wait on the porch. 
 Cyclists ride at a steady pace of 18 mph, and factoring in the time it took for him to ride over that hill, he should be here at...
@@ -103,14 +108,14 @@ I've outdone myself tonight. This bloody mess isn't going to clean itself.
     ->mop
 * <i>PUT AWAY THE TOOLS, WIPE THEM DOWN.</i>
     ->putaway
-+ <i>do nothing</i>
+* <i>do nothing</i>
     ->donothing
 
 == mop ==
 <i>Red. Pink. White.</i>
 
 It's done.
-    ->nighttime3
+    ->cleaningoptions
     
 == putaway ==
 Knives have their place, in kitchens and
@@ -204,24 +209,71 @@ Honestly, it sounds...
     -> getletter1
 
 == getletter1 ==
-My musing of murderer monikers is interrupted by the clicking noise of the typewriter. I wait, oddly excited.
+My musing of murderer monikers is interrupted by the clicking noise of the typewriter. I wait, oddly excited as can be for words on paper.
 
 Then my blood ran cold.
 
 *Read it.
-->aboutmymorning
+    ->aboutmymorning
 
 == aboutmymorning ==
-{TIME1 == true: MORNING. 6:08:23 AM. PAPER. Morning, referring to mine. The time was when the paperboy came by.}
-{TIME2 == true: MORNING. 6:08:35 AM. PAPER. Morning, referring to mine. The time was when the paperboy came by.}
-{TIME3 == true: MORNING. 6:08:49 AM. PAPER. Morning, referring to mine. The time was when the paperboy came by.}
+{TIME1 == true: MORNING. 6:08:23 AM. PAPER. Morning, referring to mine. The time was when I predicted the paper to come by.}
+{TIME2 == true: MORNING. 6:08:35 AM. PAPER. Morning, referring to mine. The time was when I predicted the paper to come by.}
+{TIME3 == true: MORNING. 6:08:49 AM. PAPER. Morning, referring to mine. The time was when I predicted the paper to come by.}
 {CASE4 == true: MORNING. CASE. ANGUISH. Morning, referring to mine. I was busy thinking about the case again, right as I woke up.}
-->realization
+    ->realization
 
 == realization ==
 It's never told me about the past, only the future. What do I do with this information?
-    ->chapter4 // cut to future prologue
+    ->chapter4 // cut to detective m.o.
 
 == chapter4 ==
 *<center> <b>CHAPTER 4</b>
--> END // cut to part 2
+    ->modus
+
+== modus ==
+Killers, as cruel and senseless as their job can be, have a reason for killing, right? That's what everyone hopes.
+
+I lay out the 4th victim on my desk. Line up the photos neatly. Lay out the notes from the officers on scene, from forensics...It looks like a half red, half white homunculus.
+
+Even if I blur my vision, anyone can tell these photos are of murders. The {BUTCHER == true: Bay Area Butcher}{BUDDY == true: Corpse Buddy}{SCYTHE==true: Scarlet Scythe} is certainly unafraid to make a mess.
+-> reviewevidence
+
+VAR PHOTOS = false
+VAR OFFICERSNOTES = false
+VAR FORENSICREP = false
+
+== reviewevidence ==
++ View the photos of the victim.
+~PHOTOS = true
+    ->victimphotos
++ Read the officers' notes.
+~OFFICERSNOTES = true
+    ->officersnotes
++ Comb through forensic report.
+~FORENSICREP = true
+    ->forensicreport
++ Come to a conclusion.
+    ->reviewconclusion
+
+== victimphotos ==
+Photos of the blood. Odd.. no circles this time. They must have been interrupted.
+    -> reviewevidence
+== officersnotes ==
+Notes of two sets of partial footprints outside. One from killer's boots. One unknown.
+    -> reviewevidence
+== forensicreport ==
+Blood is pooled, as usual, in a perfect circle. The same as the 3 others. <i>A red sun. Or blood moon.</i> But this time...blood is was also found smeared on the door knob.
+    -> reviewevidence
+
+== reviewconclusion ==
+{PHOTOS == false or OFFICERSNOTES == false or FORENSICREP == false: I can't come to a conclusion until I review everything.->reviewevidence}
+{PHOTOS == true && OFFICERSNOTES == true && FORENSICREP == true: I'm done reviewing. The 4th victim died an unfortunate death, but this time there was something different that happened.->makeconclusion}
+
+== makeconclusion ==
+* There was a witness, about to go inside. The killer tries to hold the door shut and fails. He waits until they leave and he goes after them. His work is interrupted and unfinished.
+    ->END
+* Killer, caught by surprise, tries to intercept them and accidentally gets blood on the doorknob. His work is smeared.
+    ->END
+* Killer changes shoes outside after working.
+    ->END
