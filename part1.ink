@@ -608,5 +608,5 @@ I skim the paper, most of which mentioned what I stayed up writing at the crack 
 I hear a familiar click-click of my typewriter. After the previous fortune, I'm not so excited about these 'miracles' anymore.
 
 *Read your fortune.
-MARGARET. HALE. 2:08:13 AM.
+HEATHER. CAMPBELL. 7:09:13 AM.
 ->DONE // CUT TO PART 2!
