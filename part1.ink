@@ -14,7 +14,7 @@ Waking up at sunrise has its benefits. I see the sun peek through the rooftops, 
 
 A quick glance at my watch prompts me to wait on the porch. Not necessarily for the paper, mind you.
 
-An average cyclist, or rather, hotheaded paperboys, ride at a steady pace of 18 mph, and factoring in the time it took for him to ride over that hill, he should be here at...
+An average cyclist, or rather, a hotheaded paperboy, rides at a steady pace of 18 mph, and factoring in the time it took for him to ride over that hill, he should be here at...
 
 + 6:08:23 AM.
 ~ TIME1 = true
@@ -25,7 +25,7 @@ An average cyclist, or rather, hotheaded paperboys, ride at a steady pace of 18 
 + 6:08:49 AM.
 ~ TIME3 = true
     ->getpaper
-+ THE CASE.
++ THAT CASE.
 ~ CASE4 = true
     ->getpaper
     
@@ -491,7 +491,7 @@ LONE DETECTIVE. YOU ARE NOT MY VICTIM. BUT I WILL ERASE YOU.
     ->chapter7
     
 == gloat == //concl1 false
-DETECTIVE. YOU MISTAKE THIS AS A CRIME OF HATRED. MY REASON IS ANYTHING BUT.
+DETECTIVE. YOU MISTAKE THIS AS A CRIME OF HATE. MY REASON IS ANYTHING BUT.
     ->chapter7
 
 == chapter7 ==
@@ -549,7 +549,7 @@ That was quite the realistic dream. <i>I must be stressed out.</i>
     ->getready
 
 == getready ==
-I sigh, previously tired from the night before. I had stayed up until 4AM finishing my report of Mrs. Howard. Maybe some of that leaked into my dreams.
+I sigh, previously tired from the night before. I had stayed up until 4AM finishing my report of Mrs. Howard. Maybe some of that seeped into my dreams.
 
 Yawning, I gather myself to get ready for work.
     ->getreadyoptions
