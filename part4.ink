@@ -1,3 +1,8 @@
+VAR END1 = false
+VAR END2 = false
+VAR END3 = false
+VAR END4 = false
+VAR END5 = false
 ->chaptera
 == chaptera ==
 *<center> <b>CHAPTER A</b> // detective arrives at scene
@@ -38,7 +43,7 @@ Only two doors to check, what could go wrong? ”Are there any secret passageway
 //{CONCL1 == true: I introduce myself as the lead detective, hoping to comfort him in a way, and to possibly get him to derive as much information as possible about his employee.}
 //{CONCL1 == false: I introduce myself as an investigator on this case, refraining from using my name. Now that most of my leads have gone awry, I bear the shame of my name attached to this case. The [killer] unknowingly (or did he?) claimed another victim, my career.}
 
-“Oh, Kurt Hutchinson? Nah, it can’t be him. He’s way too feeble to be the [killer]. You sure, officers?” Mr. Brown's balding head gleams as he tilts his head.
+“Kurt Hutchinson? Nah, it can’t be him. He’s way too feeble to be the [killer]. You sure, officers?” Mr. Brown's balding head gleams as he tilts his head.
 
 “Even so, we’ve tracked Kurt down to be an employee here. We need to ask you a few questions.” I also decide to refrain from saying that this alleged serial killer might be inside as we speak.
     ->talkmanager_options
@@ -80,7 +85,7 @@ I frown, which Mr. Brown misinterprets. “Come on, it’s for safety. Do I need
 
 I pause for a moment, my stomach twisting in realization. “If it disappeared between when you saw it and the time you last saw us arriving here, then it’s possible Kurt has taken it.” 
 
-Mr. Brown scoffs, which was not what I expected. “Taken it? There aren’t any bullets in it. I keep those in a separate drawer.” Mr. Brown, if only you were as cautious with safety all the time. My stomach graciously unknots itself.
+Mr. Brown scoffs. “Taken it? There aren’t any bullets in it. I keep those in a separate drawer.” Mr. Brown, if only you were as cautious with safety all the time. My stomach graciously unknots itself.
 ->plant_options
 
 VAR FREEZER_SEARCHED = false
@@ -109,8 +114,8 @@ I doubt Hutchinson is strong enough to drag anything into the depths of this fre
 "Alright, Mr. Brown. I'd like you to lock up this freezer room and make sure nothing comes in or out of it until I say so. Some extra security wouldn't hurt either," I say as I motion for officers to stand at the entrance.
     ->plant_options
 
-== gotoworkplace
-“This is where the boy worked." It was a conveyor belt for fish, and he stood here, preparing them for consumption, guillotine-style.
+== gotoworkplace ==
+“This is where the boy worked." It was a conveyor belt for fish, and he stood here, preparing them for consumption, as a human guillotine.
 
 "He wasn’t strong enough to deal with the larger cuts of meat, so we let him deal with the fish, and do some deliveries.” He shakes his head. “You sure you got the right guy?”
 
@@ -120,7 +125,7 @@ I doubt Hutchinson is strong enough to drag anything into the depths of this fre
 * “How was he as an employee?”
     ->asanemployee
 	
-== howdhegetthejob
+== howdhegetthejob ==
 Mr. Brown shrugs. “Not sure, I didn’t hire him. The guy before me did it as a favor, I think. How else would he be here?”
 
 * Did the previous manager know of a 'Marta Hutchinson'?
@@ -129,7 +134,7 @@ Mr. Brown shrugs. “Not sure, I didn’t hire him. The guy before me did it as 
     ->chaseafter
 
 == asanemployee
-Mr. Brown waves his hand, as if dismissing any preconceived notions I had of the killer. “Eh, Kurt was normal. Kept to himself, and did his work like a good employee. How was I supposed to know he got tired of scaling fish?”
+Mr. Brown waves his hand, as if dismissing any preconceived notions I had of the killer. “What'd'you want me to say? Hutchinson was as sane as any guy working in a meathouse. Kept to himself, and did his work like a good employee. How was I supposed to know he got tired of scaling fish?”
 
 * Did he show signs of sociopathic behavior?
     ->chaseafter
@@ -138,10 +143,9 @@ Mr. Brown waves his hand, as if dismissing any preconceived notions I had of the
 * Have you noticed strange behaviors from Kurt?
     ->chaseafter
  
-== chaseafter //do it after exploring plant done
-He didn't answer. Instead, I got something better.
-
-Mr. Brown suddenly leaned to look behind me, cocking his head.
+== chaseafter == //do it after exploring plant done
+He doesn't answer, instead his focus shifting somewhere else.
+Mr. Brown leans to look behind me, cocking his head.
 “Hey, kiddo! What’re you doin’ over there? The police are here to see you!”
     ->chapterc
 
@@ -164,10 +168,11 @@ I WILL BEND MY RULES JUST FOR YOU.
     ->gotorooftop
 
 == gotorooftop ==
-"STOP! Don't run!"
+"STOP! Don't run!" Useless phrases, but it was a habit.
+
 I pursue him up the stairs, all the way to the top floor. 
 
-He doesn't slow down, even for me. He scales up a ladder, leading to the roof. 
+He doesn't slow down, and I could barely track him in the shadows. He purposely chose the path with the broken lightbulb, with the obscured view. Like a snake, he writhes up a ladder, leading to the roof. 
 
 "Wouldn't follow him up if I were you! That hatch opens only from the inside," Mr. Brown calls after me.
 
@@ -178,18 +183,24 @@ He doesn't slow down, even for me. He scales up a ladder, leading to the roof.
 * Chapter E  // detective negotiates with killer
     ->cornered
 
-VAR GUN = true
+VAR GUN = false
+VAR GUILT = false
+VAR SYMPATHY = false
+VAR DEFENSIVE = false
+VAR AGGRESSIVE = false
+VAR GAVEKEY = false
 == cornered ==
 I corner him on the rooftop. Getting down is not an immediate option, now that the hatch has slammed shut. He’s gotten hold of the manager’s pistol, and I have my own gun. 
 
-I also have my own conclusions on how this will end but he probably only sees one. People like that have tunnel vision, it’s them vs. the world. If that’s the case, maybe I can switch sides.
+Kurt has tunnel vision, it’s him vs. the world. If that’s the case, maybe I can switch sides.
 
-I step closer, making the first move. I need to respond in the way he might respect.
-* Draw weapon. // aggressive approach 1
+I step closer, making the first move. I need to respond in the way he might respect, or in a way he's doesn't expect.
+
+* Draw weapon. // aggressive
     ->drawgun
-* Placate him. // passive 1
+* Placate him. // passive
     ->placatehim
-* Taunt him. // passive-aggressive 1
+* Taunt him.   // passive-aggressive
     ->taunthim
 
 == drawgun ==
@@ -236,8 +247,6 @@ He displays a wry smile. "A gun fight, yeah." He pauses, then looks down. "So wh
 
 * I need information from you in exchange.
     ->inexchange
-* .
-    ->unfairness
 
 == unfairness == // ending 1?
 "Maybe, but I still need something from you before handing you away." <i>Look confident.</i>
@@ -268,9 +277,6 @@ Before I can react, he aims for my heart. It hits my left lung instead. <i>What 
 == grotesque ==
 "And you want to do it again, so help me help you shake that urge," I plead.
 
-""
-    ->notneutralized
-
 == gofree == //ending 4
 "You realize you can't get off this roof without being arrested and/or need medical attention?", I ask.
 
@@ -287,6 +293,8 @@ At this point I see no other option. I shoot him, non-lethally, in his right sho
 He gasps, and collapses on the gravel. "I thought we were friends." he mumbles.
 
 "We are. And true friends let each other know when it's time to stop acting horribly."
+~SYMPATHY = true
+~AGGRESSIVE = true
     ->neutralized
 
 == areyoucrazy ==
@@ -304,42 +312,81 @@ He calls my bluff, and does it himself.
     ->notwelcome
 
 == notwelcome ==
-    "I don't know. I wasn't welcome in this town to begin with."
+"I don't know. I wasn't welcome in this town to begin with."
     
-    "Then I'll track you down to the ends of the Earth. This is <i>my job</i>!" I sidestep closer to him.
+"Then I'll track you down to the ends of the Earth. This is <i>my job</i>!" I sidestep closer to him.
     
-    "And this is mine! This is my fate!" He yells, backing up more. He catches himself on the ledge, nearly toppling off.
+"And this is mine! This is my fate!" He yells, backing up more. He catches himself on the ledge, nearly toppling off.
     
 * Disarm him.
     ->disarm
 * Push him.
+~GUILT = true
     ->push
     
 == friends ==
 "We're not friends. I can't trust you." I don't budge.
     
-"No? Well, you're the closest to a friend I'll ever have. You must know so much about me." He doesn't either.
+"No? Well, you're the closest to a friend I'll ever have. Out of all the people in the world, you know me best." He doesn't either.
 
-"Will you give me the location of the 5th victim? As a favor between friends?" 
+*"Will you tell me about the 5th victim? As a favor between friends?"
+    ->victim5
     
+== victim5 ==
+"She might die if you don't find her soon. Where do you think she is?"
+
+* Freezer.
+    ->freezerdilemma
+    
+== freezerdilemma == //ending 2
+
+"It's me or the victim. Let me get out of here. Handcuff me but give me the key. I'll manage with the swine under that hatch."
+
+* Comply.
+~GAVEKEY = true
+    "Drop that gun and kick it to me." He does. 
+    
+    "Lay flat on the ground." He does.
+
+* Handcuff him.
+    ->killerescapes
+
+* Refuse.
+    "Not today, fool."
+
+== killerescapes == //ending1
+<i>Why is it suddenly so simple?</i>
+I lead him down the ladder, putting on a show. I'm being puppeteered around. I order the freezer to be unlocked, releasing the 5th from her slow death.
+
+Who's the bad guy here?
+
+The [killer] lingers behind. Kurt Hutchinson is driven away.
+~END1 = true
+    ->chapterf
+
 == disarm ==
 I jump opposite the side of him, grab the gun out of his right hand, and grab his left arm.
 
 * Let go.
-
+~GUILT = true
+    ->neutralized
 * Pull him back.
-    
     ->neutralized
 
 == savehim == //ending 2
+~END2 = true
+~SYMPATHY = true
 He falls to the gravel, shaking. I didn't realize how scared he'd be. The person that filled my world with worry was now a shaking heap in front of me.
 ->neutralized
 
 == push == //ending 5
+~END5 = true
+~AGGRESSIVE = true
+~GUILT = true
 I take this life-or-death opportunity. Taking advantage of his shock, I try to catch his arm, by pushing it away. The momentum is enough.
 
 <i>The [killer] jumped off a meat packing plant rooftop at 8:26:23 PM. Turn to page ◼︎ to continue reading.</i>
-    ->neutralized
+    ->chapterf
 
 == placatehim ==
 “Calm down, Kurt.“ You don’t need to worry about me hurting you if you’d just put the gun down.”
@@ -347,13 +394,13 @@ I take this life-or-death opportunity. Taking advantage of his shock, I try to c
 “Don’t. Call me that.” He backs into the corner like a scared cat. Gravel scatters down onto the ground like hail.
     ->research_options
 
-== research_options //choices based on researched info about him
+== research_options ==//choices based on researched info about him
 * Push further. // successful if det. did his research
     ->pushfurther
 * Pull back. // placation doesn't work in the end
     ->pullback
     
-== pushfurther
+== pushfurther ==
 “Your mother, Marta Hutchinson, she disappeared in front of you. A terrible experience, which affected you severely.”
 
 "I assure you I haven't changed a bit."
@@ -361,13 +408,45 @@ I take this life-or-death opportunity. Taking advantage of his shock, I try to c
 * Reference his background.
     ->bgcheck
 
-== pullback
-“I know…about your mother, and how she died. I understand that you use killing as a way to cope with the trauma of her death.”, I try to explain, albeit vaguely.
+== pullback ==
+“I know…about your mother, and how she died. I understand that you use killing as a way to cope with the trauma of her death,” I try to explain, albeit vaguely.
 
-“Is that all? Where’d you find that information? From a piece of paper, written by people like you?”, he wipes his face with his sleeve. “You weren’t there, so how can you claim to <i>know</i>?”
-    ->notneutralized
+“Is that all? Where’d you find that information? From a piece of paper, written by people like you?”, he wipes his face with his sleeve. “You weren’t there, so don't be such a know-it-all.”
 
-== bgcheck
+* Be humble.
+    ->discussmurders
+* Be aggressive.
+    ->discussmurders2
+    
+== discussmurders  ==
+"Kurt, even a low-rate detective like me can figure out why you kill the way you kill."
+
+// refer to conclusions
+"Are you sure you know what you're talking about?"
+~END3 = true
+    ->chapterf
+
+== discussmurders2  ==
+//victims
+"The third one you messed up, can't even wear clean gloves. That pig blood is how we tracked you here. Fourth one ..." //TODO
+
+"Stop. Stop talking!" Kurt clamps his hands over his ears.
+
+"Sloppy work, Kurt. The Day Stalker was way more creative, and accomplished more than you ever will." I shake my head like a disappointed parent.
+
+Something shiny slips down his face. <i>He's crying.</i>
+
+* Weak point.
+    ->cries
+    
+== cries == //ending5
+I tackle him to the ground. So this is Kurt Hutchinson, the orphaned boy who misses his mother. The hard-working employee who scales fish for the town, runs deliveries. 
+
+I was too focused on his other self to notice.
+~END5 = true
+    ->chapterf
+
+== bgcheck ==
 "All your victims bear similarity in appearance and age to when your mother died."
     
 "Mom liked the color red. If she was here I think she'd be proud. I make all my art in the image of her."
@@ -377,17 +456,27 @@ I take this life-or-death opportunity. Taking advantage of his shock, I try to c
     ->getagrip
     
 * I'm sure she would be.
+~SYMPATHY = true
     "Well...I'm sure she'll be proud you found something you like to do."
     
     He laughs dryly. "Are you sure you don't lead a double life as a murderer too?"
     
-    "You aren't beyond saving."
+    "I was being sarcastic. You aren't beyond saving."
     
-    "I certainly am now. But I needed it 3 years ago, when I was dumped into the foster system."
-    ->getagrip
+    "I certainly am now, I've killed so many!" He throws his head back and laughs.
+    ->fosterkid
 
 == getagrip ==
-""
+~AGGRESSIVE = true
+"Get a grip, Kurt. Don't expect kindness from anyone any more. You've drained the town's supply."
+
+He jumps towards me, growling like a wild animal, and I shoot him in shock.
+
+Smiling a bloody grin, he mouths "Now I don't have to hide anymore". His eyes close.
+    
+
+== fosterkid ==
+I curl my lip in disgust. "Alright, Kurt, you're a disgusting murderer. Your dead mother doesn't love you, what now?"
 
 == taunthim ==
 Bold acts, bold facts. “So, you’re the [killer], huh? I expected someone with a little more gut and muscle.”
@@ -413,8 +502,6 @@ He sniffed, “Are you disappointed?”. He slightly lowers his pistol.
 “No, I wanted to talk to you.”
 // check if det. Wanted to negotiate, VAR needed
 Kurt shakes his head, “No…I heard you say you didn’t want to.”
-
-“...You were listening?” I’m trapped. 
     ->notneutralized
 
 
@@ -440,15 +527,32 @@ Kurt shakes his head, “No…I heard you say you didn’t want to.”
     
 == endings ==
 // 1. all clues wrong (killer persp) killer escapes. Det and victim dead
-Killer still at large. At least two reportedly dead.
-// 2. any ⅔ clues wrong (killer persp) killer caught, victim is found. Det lives a hero
-Detective saves town from [killer]. Victim found alive.
+{END1 == true: KILLER STILL AT LARGE. AT LEAST TWO REPORTEDLY DEAD.->end1}
+// 2. any ⅔ clues wrong (killer persp) killer caught/escaped eventually, victim is found. Det lives a hero.
+//if GAVEKEY true killer escapes in police custody.
+{END2 == true: DETECTIVE SAVES TOWN FROM [KILLER]. VICTIM FOUND ALIVE.->end2}
 // 3. ½ clues wrong (killer persp) killer caught and jailed. Det disgraced. Victim dies.
-Killer dies along with missing victim. Deadly detective?
+{END3 == true: KILLER DIES ALONG WITH MISSING VICTIM. DEADLY DETECTIVE?->end3}
 // 4. clue 3 wrong (det persp) catches killer but BOTH die from injuries. Victim lives
-Victim found. Killer dies from shooting.
-
-He shoots, my heart quickens. He jumps, my lungs fill with blood. But I go first.
-<i>For once, I take the lead.</i>
+{END4 == true: VICTIM FOUND. KILLER DIES FROM SHOOTING.->end4}
 // 5. all correct (det persp) catches the killer and lives. Victim lives
+{END5 == true: ->end5}
+
+
+==end1
+
+->DONE
+==end2
+
+->DONE
+==end3
+
+->DONE
+==end4
+
+->DONE
+==end5
+He shoots, my heart quickens. He jumps, my lungs fill with blood. But I go first.
+
+<i>For once, I take the lead.</i> 
 ->DONE
