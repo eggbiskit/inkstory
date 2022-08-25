@@ -190,6 +190,7 @@ VAR SYMPATHY = false
 VAR DEFENSIVE = false
 VAR AGGRESSIVE = false
 VAR GAVEKEY = false
+VAR TYPEWRITER = false
 == cornered ==
 I corner him on the rooftop. Getting down is not an immediate option, now that the hatch has slammed shut. He’s gotten hold of the manager’s pistol, and I have my own gun. 
 
@@ -267,7 +268,8 @@ He displays a wry smile. "A gun fight, yeah." He pauses, then looks down. "So wh
         ->kurtarrested
         
 * Keep talking.
-    "Of course not." ->TBD
+    "Of course not. Let's talk about something else."
+        ->pushfurther
 
 == unfairness == // ending 1?
 "Maybe, but I still need something from you before handing you away." <i>Look confident.</i>
@@ -357,7 +359,7 @@ He calls my bluff, and does it himself.
     ->victim5
     
 == victim5 ==
-"She's somewhere you've been before, somewhere you can't stand. "
+"She's somewhere you've been before, somewhere most people can't stand."
 
 * Mrs. Howard's.
     ->wrongguess
@@ -454,10 +456,13 @@ I take this life-or-death opportunity. Taking advantage of his shock, I try to c
     
 == discussmurders ==
 "Kurt, even a low-rate detective like me can figure out why you kill the way you kill."
-    ->TBD
+
+Kurt holds a stern expression. "Don't forget about me. If you get promoted, or if you ever feel lucky, Rrmember that I'm the person who made you that way." <i>The typewriter?</i>
+~TYPEWRITER = true
+    ->kurtjumps_end
 
 == discussmurders2  ==
-"The third one you messed up, can't even wear clean gloves. That pig blood is how we tracked you here. Fourth one ..." //TODO
+"The third one you messed up, can't even wear clean gloves. That pig blood is how we tracked you here. Fourth one you weren't even able to kill."
 
 "Stop. Stop talking!" Kurt clamps his hands over his ears.
 
@@ -514,21 +519,8 @@ He sniffed, “Are you disappointed?”. He slightly lowers his pistol.
 	->truthtime
 	
 == truthtime ==
-* True. -> truth 
-* Not entirely true. -> nottrue 
-
-== truth ==
-“Yes, I did come here with the intention of arresting you.” 
-    ->TBD
-
-== nottrue
-“No, I wanted to talk to you.”
-    ->TBD
-    
-== TBD ==
-TO BE WRITTEN...
-    ->DONE
-
+* True. ->gofree 
+* Not entirely true. ->discussmurders 
 
 // 8 ENDINGS
 == kurtarrested ==
@@ -557,8 +549,8 @@ TO BE WRITTEN...
 
 == kurtjumps_end ==
 {GUILT == true: ->kurtjumps_guiltyend}
-The typewriter no longer writes to me. <i>Why should it?</i> My luck is better than ever, and the town is rid of the plague.
-
+The typewriter no longer writes to me. <i>Why should it?</i> My luck is better than ever, and the town is rid of the miasma of looming death.
+{TYPEWRITER == true: I look at the typewriter, now smashes in pieces at the bottom of my wastebasket. No more fortunes for me, I can't afford them anymore.}
 ->DONE
 
 == kurtjumps_guiltyend ==
