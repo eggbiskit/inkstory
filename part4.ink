@@ -3,6 +3,7 @@ VAR END2 = false
 VAR END3 = false
 VAR END4 = false
 VAR END5 = false
+VAR NEG = false
 ->chaptera
 == chaptera ==
 *<center> <b>CHAPTER A</b> // detective arrives at scene
@@ -180,7 +181,7 @@ He doesn't slow down, and I could barely track him in the shadows. He purposely 
     ->chaptere
 
 == chaptere ==
-* Chapter E  // detective negotiates with killer
+*<center> <b>CHAPTER E</b>  // detective negotiates with killer
     ->cornered
 
 VAR GUN = false
@@ -196,12 +197,14 @@ Kurt has tunnel vision, it’s him vs. the world. If that’s the case, maybe I 
 
 I step closer, making the first move. I need to respond in the way he might respect, or in a way he's doesn't expect.
 
+"Might not wanna shoot me if you want to know where 5th is," he says. <i>5th? 5th victim?</i>
+
 * Draw weapon. // aggressive
     ->drawgun
 * Placate him. // passive
     ->placatehim
-* Taunt him.   // passive-aggressive
-    ->taunthim
+//* Taunt him.   // passive-aggressive
+    //->taunthim
 
 == drawgun ==
 Dusk approaches. The sun, now setting, casts its hue on everything. His scared expression transforms into a red, visceral rage. The [killer] has come out to play.
@@ -215,18 +218,22 @@ In return, I draw my weapon too. // make VAR WEAPON = true
 
 "You think I won't?!", Kurt shouts. I hear the hatch banging behind me, voices asking if I need backup.
 
-He fires a warning shot in the air, startling the nearby cattle.
+He fires a blank in the air, startling the nearby cattle.
 
 * I need it.
     ->needbackup
 * I don't need it.
     ->dontneedbackup
     
-== needbackup //ending 3
+== needbackup ==
 <i>Chaos ensues.</i>
 
-Kurt shoots wildly. I'm fatally hit, and a medic rushes to me, holding the wound shut. I try to look at Kurt one last time, but ???.
-    ->notneutralized
+I fire the first shot, only to scare him and do not hit flesh. 
+
+He runs straight towards me, and with superhuman strength, wrestles the gun out of my hand. 
+
+I try to look at Kurt one last time, but I pass out against my will.
+    ->detdies
 
 == dontneedbackup ==
 "We hear one more gunshot and we are charging up there, Detective, you hear?"
@@ -247,6 +254,20 @@ He displays a wry smile. "A gun fight, yeah." He pauses, then looks down. "So wh
 
 * I need information from you in exchange.
     ->inexchange
+* Just wanted to talk you.
+    ->talkaboutyou
+
+== talkaboutyou ==
+"Look, it's over, Kurt. You can't get off this roof scot free. Evade me once, my fault. Evade me twice, and I'll shoot to kill - at the very least, maim. <i>So put down, the gun.</i>"
+
+"You haven't killed me yet, so that rule doesn't apply to me." He gestures to my holster, now peaking out from under my jacket. "Draw your weapon. Why don't you draw it? Are you underestimating me?"
+
+* Draw it (and shoot).
+    "Fine. Have it your way." I draw my gun out, slowly. <i>Rules are rules.</i> I shoot his leg, and he collapses into a screaming heap of hate.
+        ->kurtarrested
+        
+* Keep talking.
+    "Of course not." ->TBD
 
 == unfairness == // ending 1?
 "Maybe, but I still need something from you before handing you away." <i>Look confident.</i>
@@ -254,7 +275,7 @@ He displays a wry smile. "A gun fight, yeah." He pauses, then looks down. "So wh
 "I'd rather die before going anywhere near those pigs," [killer's name] adds, "and I'll start with <i>you</i>."
 
 Before I can react, he aims for my heart. It hits my left lung instead. <i>What a bad shot.</i> I drown in my own pool of red.
-    ->notneutralized
+    ->detdies
 
 == inexchange ==
 "I called off my backup because I need information from you. Tell me where the 5th victim is."
@@ -277,17 +298,20 @@ Before I can react, he aims for my heart. It hits my left lung instead. <i>What 
 == grotesque ==
 "And you want to do it again, so help me help you shake that urge," I plead.
 
+"I don't take help! Especially not from the likes of you." The [killer] leaps off the building, into the night. Kurt Hutchinson falls to his death 4 stories below.
+    ->kurtjumps_end
+
 == gofree == //ending 4
 "You realize you can't get off this roof without being arrested and/or need medical attention?", I ask.
 
-"So shoot me.", he says, like I dared him to say it.
+"So shoot me," he says, like I dared him to say it.
 
 * Do it.
     ->shootshoulder
 * Don't.
     ->areyoucrazy
 
-== shootshoulder
+== shootshoulder ==
 At this point I see no other option. I shoot him, non-lethally, in his right shoulder.
 
 He gasps, and collapses on the gravel. "I thought we were friends." he mumbles.
@@ -295,18 +319,18 @@ He gasps, and collapses on the gravel. "I thought we were friends." he mumbles.
 "We are. And true friends let each other know when it's time to stop acting horribly."
 ~SYMPATHY = true
 ~AGGRESSIVE = true
-    ->neutralized
+    ->kurtarrested
 
 == areyoucrazy ==
 He calls my bluff, and does it himself.
 "There's nothing left for me here," I think he said.
-    ->neutralized
+    ->kurtshootshimself
     
-== promise == //distract and disarm
+== promise ==
 "What if I promise never to kill again?", he suddenly erupts.
 
 * Can't trust you.
-    -> friends
+    ->friends
     
 * Where will you go from here?
     ->notwelcome
@@ -329,64 +353,74 @@ He calls my bluff, and does it himself.
     
 "No? Well, you're the closest to a friend I'll ever have. Out of all the people in the world, you know me best." He doesn't either.
 
-*"Will you tell me about the 5th victim? As a favor between friends?"
+*"So tell me, as a favor between friends."
     ->victim5
     
 == victim5 ==
-"She might die if you don't find her soon. Where do you think she is?"
+"She's somewhere you've been before, somewhere you can't stand. "
 
-* Freezer.
+* Mrs. Howard's.
+    ->wrongguess
+* Freezer room.
     ->freezerdilemma
+* The DMV.
+    ->wrongguess
     
-== freezerdilemma == //ending 2
+== wrongguess ==
+"HAHA-WRONG!!" Kurt shoots again, but nothing happens. <i>Good thinkng, Brown. </i>
 
-"It's me or the victim. Let me get out of here. Handcuff me but give me the key. I'll manage with the swine under that hatch."
+I flip him over and handcuff him, as he struggles to no avail.
+    ->kurtarrested
+    
+== freezerdilemma ==
+"It's me or the victim. Let me get out of here. Handcuff me but give me the key. Say anything more and I'll shoot you. I'll manage with the swine under that hatch."
 
 * Comply.
 ~GAVEKEY = true
-    "Drop that gun and kick it to me." He does. 
+    "Toss the gun away." He does.
     
-    "Lay flat on the ground." He does.
+    "Turn around, hands up." He does.
+    
+    Those were the last explicit orders I had for him. His were implicit, ingrained into me.
+    ->handcuff
 
+* Refuse.
+    ->detshootskurt_nonfatal
+    
+== handcuff ==
 * Handcuff him.
     ->killerescapes
 
-* Refuse.
-    "Not today, fool."
-
-== killerescapes == //ending1
+== killerescapes ==
 <i>Why is it suddenly so simple?</i>
 I lead him down the ladder, putting on a show. I'm being puppeteered around. I order the freezer to be unlocked, releasing the 5th from her slow death.
 
 Who's the bad guy here?
 
-The [killer] lingers behind. Kurt Hutchinson is driven away.
-~END1 = true
-    ->chapterf
+The threat of the [killer] lingers behind in town, as Kurt Hutchinson is driven away.
+    ->kurtarrested_fluke
 
 == disarm ==
 I jump opposite the side of him, grab the gun out of his right hand, and grab his left arm.
 
 * Let go.
 ~GUILT = true
-    ->neutralized
+    ->kurtjumps_end
 * Pull him back.
-    ->neutralized
+    ->detpullsbackkurt
 
-== savehim == //ending 2
-~END2 = true
+== savehim ==
 ~SYMPATHY = true
 He falls to the gravel, shaking. I didn't realize how scared he'd be. The person that filled my world with worry was now a shaking heap in front of me.
-->neutralized
+->detshootskurt_nonfatal
 
-== push == //ending 5
-~END5 = true
+== push ==
 ~AGGRESSIVE = true
 ~GUILT = true
 I take this life-or-death opportunity. Taking advantage of his shock, I try to catch his arm, by pushing it away. The momentum is enough.
 
 <i>The [killer] jumped off a meat packing plant rooftop at 8:26:23 PM. Turn to page ◼︎ to continue reading.</i>
-    ->chapterf
+    ->kurtjumps_end
 
 == placatehim ==
 “Calm down, Kurt.“ You don’t need to worry about me hurting you if you’d just put the gun down.”
@@ -394,10 +428,10 @@ I take this life-or-death opportunity. Taking advantage of his shock, I try to c
 “Don’t. Call me that.” He backs into the corner like a scared cat. Gravel scatters down onto the ground like hail.
     ->research_options
 
-== research_options ==//choices based on researched info about him
-* Push further. // successful if det. did his research
+== research_options ==
+* Push further.
     ->pushfurther
-* Pull back. // placation doesn't work in the end
+* Pull back.
     ->pullback
     
 == pushfurther ==
@@ -418,16 +452,11 @@ I take this life-or-death opportunity. Taking advantage of his shock, I try to c
 * Be aggressive.
     ->discussmurders2
     
-== discussmurders  ==
+== discussmurders ==
 "Kurt, even a low-rate detective like me can figure out why you kill the way you kill."
-
-// refer to conclusions
-"Are you sure you know what you're talking about?"
-~END3 = true
-    ->chapterf
+    ->TBD
 
 == discussmurders2  ==
-//victims
 "The third one you messed up, can't even wear clean gloves. That pig blood is how we tracked you here. Fourth one ..." //TODO
 
 "Stop. Stop talking!" Kurt clamps his hands over his ears.
@@ -436,15 +465,14 @@ I take this life-or-death opportunity. Taking advantage of his shock, I try to c
 
 Something shiny slips down his face. <i>He's crying.</i>
 
-* Weak point.
+* A weak point.
     ->cries
     
-== cries == //ending5
+== cries ==
 I tackle him to the ground. So this is Kurt Hutchinson, the orphaned boy who misses his mother. The hard-working employee who scales fish for the town, runs deliveries. 
 
-I was too focused on his other self to notice.
-~END5 = true
-    ->chapterf
+I am too focused on his other self to care.
+    ->kurtarrested
 
 == bgcheck ==
 "All your victims bear similarity in appearance and age to when your mother died."
@@ -456,27 +484,23 @@ I was too focused on his other self to notice.
     ->getagrip
     
 * I'm sure she would be.
-~SYMPATHY = true
     "Well...I'm sure she'll be proud you found something you like to do."
     
     He laughs dryly. "Are you sure you don't lead a double life as a murderer too?"
     
-    "I was being sarcastic. You aren't beyond saving."
+    "I was being sarcastic. You <i>are</i> beyond saving."
+    ->taunthim
     
-    "I certainly am now, I've killed so many!" He throws his head back and laughs.
-    ->fosterkid
-
 == getagrip ==
 ~AGGRESSIVE = true
 "Get a grip, Kurt. Don't expect kindness from anyone any more. You've drained the town's supply."
 
 He jumps towards me, growling like a wild animal, and I shoot him in shock.
 
-Smiling a bloody grin, he mouths "Now I don't have to hide anymore". His eyes close.
-    
+Smiling a bloody grin, he mouths "A stain on your conscience". His eyes close, and I hear a bang near my head.
 
-== fosterkid ==
-I curl my lip in disgust. "Alright, Kurt, you're a disgusting murderer. Your dead mother doesn't love you, what now?"
+* Blood and a bullet. Same way Marta Hutchinson went.
+    ->detshootskurt
 
 == taunthim ==
 Bold acts, bold facts. “So, you’re the [killer], huh? I expected someone with a little more gut and muscle.”
@@ -489,70 +513,94 @@ He sniffed, “Are you disappointed?”. He slightly lowers his pistol.
 “I wasn’t ready to stop," he hesitates, “and you came here to put me away for good.”
 	->truthtime
 	
-== truthtime
+== truthtime ==
 * True. -> truth 
 * Not entirely true. -> nottrue 
 
-== truth
+== truth ==
 “Yes, I did come here with the intention of arresting you.” 
-// check if det. Wanted to NOT negotiate, VAR needed
-    ->neutralized
+    ->TBD
 
 == nottrue
 “No, I wanted to talk to you.”
-// check if det. Wanted to negotiate, VAR needed
-Kurt shakes his head, “No…I heard you say you didn’t want to.”
-    ->notneutralized
-
-
-// VAR NEG = true, neutralized
-// VAR NEG = false, not neutralized
-
-== notneutralized // leads to 1, 3, 4 (bad for det)
-// [Recap all prev conclusions made]
-// If det. doesn't get pistol he gets shot, 5th victim is not found(?), killer escapes via hatch - ending 1
-// If det. Does something cowardly - ending 3
-// If det. Tackles killer when distracted and lives - ending 4
-    ->chapterf
-
-== neutralized // leads to either 2 or 5 (good for det)
-// recap
-//If det. gets hold of pistol but cant find 5th victim - ending 2
-//If det. Fails in neg and - ending 5
-    ->chapterf
+    ->TBD
     
-== chapterf ==
-*<center> <b>CHAPTER F</b>  // leads to the endings
-    ->endings
-    
-== endings ==
-// 1. all clues wrong (killer persp) killer escapes. Det and victim dead
-{END1 == true: KILLER STILL AT LARGE. AT LEAST TWO REPORTEDLY DEAD.->end1}
-// 2. any ⅔ clues wrong (killer persp) killer caught/escaped eventually, victim is found. Det lives a hero.
-//if GAVEKEY true killer escapes in police custody.
-{END2 == true: DETECTIVE SAVES TOWN FROM [KILLER]. VICTIM FOUND ALIVE.->end2}
-// 3. ½ clues wrong (killer persp) killer caught and jailed. Det disgraced. Victim dies.
-{END3 == true: KILLER DIES ALONG WITH MISSING VICTIM. DEADLY DETECTIVE?->end3}
-// 4. clue 3 wrong (det persp) catches killer but BOTH die from injuries. Victim lives
-{END4 == true: VICTIM FOUND. KILLER DIES FROM SHOOTING.->end4}
-// 5. all correct (det persp) catches the killer and lives. Victim lives
-{END5 == true: ->end5}
+== TBD ==
+TO BE WRITTEN...
+    ->DONE
 
 
-==end1
+// 8 ENDINGS
+== kurtarrested ==
+{FREEZER_SEARCHED == true: ->kurtescapes}
+*Read paper.
+    Kurt Hutchinson, 21, male, is revealed to be the [killer]. He worked briefly at Brown's Meathouse as a prepper and deliveryman. He has plead guilty to 5 counts of homicide, and currently awaits life in prison. 
+->DONE
+
+== kurtarrested_fluke == 
+{GAVEKEY == true: ->kurtescapes_key}
+->DONE
+
+== kurtescapes_key ==
+<i>*STATIC* This is Officer *unintelligible* we need help! [killer] suspect has escaped. He grabbed the wheel-*STATIC*-ran away.</i>
+
+<i>*STATIC* Stay calm. Help is on the way. *CHHK*-is your location?</i>
+
+*View report.
+    <i>Hutchinson was handcuffed and put in back of police car 673. Officer G.E. and Chief of Police Q.W. accompanied him in car. Estimated travel time was 20 minutes. Approx. 8 minutes in Hutchinson leapt up and took control of wheel, crashing into roadside ditch. Handcuffs were dangling around wrist. G.E. and Q.W. remained unconscious until 4AM, sustaining minor injures. Hutchinson remains at large.</i>
+    ->DONE
+
+== kurtescapes ==
+*View report.
+    <i>Suspect runs away among the officers on scene, most of which were spent searching the freezer. The 5th victim was found, hypothermic. Condition stable. Hutchinson remains at large.</i>
+    ->DONE
+
+== kurtjumps_end ==
+{GUILT == true: ->kurtjumps_guiltyend}
+The typewriter no longer writes to me. <i>Why should it?</i> My luck is better than ever, and the town is rid of the plague.
 
 ->DONE
-==end2
 
+== kurtjumps_guiltyend ==
+The typewriter is my torment. It's the only one that knows my secrets.
+
+Hutchinson is waiting at the bottom. 
+GUILTY. GUILTY. GUILTY. 
+I get out of my seat and head down the hallway.
+GUILTY. GUILTY. GUILTY. 
+I climb the small steps and push open the door.
+GUILTY. GUILTY. GUILTY.
+I sit on the ledge, basking in warmth.
+GUILTY. GUILTY. GUILTY. 
+Hugging the typewriter, I jump off.
 ->DONE
-==end3
 
+== kurtshootshimself ==
+Of course, no bullets in the gun. But then he brandishes a knife, and stabs himself. 
+
+A bloody sheet. Now ashes in the fire. Now urn in the mausoleum.
+That's all I was told, and now I've lost the trail again.
 ->DONE
-==end4
 
+== detshootskurt ==
+Marta Hutchinson and her son are together at last. For three years he's wandered around, confused, not belonging here...
+
+I have nothing more to say. The case is already closed.
 ->DONE
-==end5
-He shoots, my heart quickens. He jumps, my lungs fill with blood. But I go first.
 
-<i>For once, I take the lead.</i> 
+== detshootskurt_nonfatal ==
+I visit Kurt in the hospital, after his interrogations.
+He refuses to talk, to look at me. I don't see him again, and let the passage of time do its work.
+->DONE
+
+== detpullsbackkurt ==
+The next time I see him is during his hearing. He pleads guilty to all counts, and gets a life sentence. Something about the courtroom lights diminish them, as the shrink back down into their human form, inner devils burning in fluorescence.
+
+The judge bangs the gavel, and it's finally is over.
+->DONE
+
+== detdies ==
+*View report.
+    <i>4 officers: G.E., A.S., N.M., J.K., open the hatch and see det. laying down. Later confirmed dead. Suspect is brandishing a gun, and attempts to shoot at officers. Suspect is shot by G.E.</i>
+    ->DONE
 ->DONE
