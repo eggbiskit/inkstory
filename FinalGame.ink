@@ -781,9 +781,9 @@ Campbell, Hailey //only two here are clickable as knots/links, want the others t
 Campbell, Harriet
 Campbell, Harvy
 Campbell, Henry
-+Campbell, Heather A  -> HeatherAvery
-+Campbell, Heather F ->HeatherFrancine 
-+Close White Pages. -> frontseat
+*Campbell, Heather A  -> HeatherAvery
+*Campbell, Heather F ->HeatherFrancine 
+*Close White Pages. -> frontseat
 
 VAR AveryPhoneNumber = true
 VAR notesAddAveryname = true
