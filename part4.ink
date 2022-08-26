@@ -1,9 +1,3 @@
-VAR END1 = false
-VAR END2 = false
-VAR END3 = false
-VAR END4 = false
-VAR END5 = false
-VAR NEG = false
 ->chaptera
 == chaptera ==
 *<center> <b>CHAPTER A</b> // detective arrives at scene
@@ -20,7 +14,7 @@ I arrive at the meat processing plant on the edge of town. Among the officers, I
     
 == talkmanager ==
 
-A stout, beet-red man phases even the toughest officers, it seems. His nametag read <i>Wilfred Brown, Manager</i>. I attempt to calm him down with the promise of information about his employee, aka the [killer].
+A stout, beet-red man phases even the toughest officers, it seems. His nametag read <i>Wilfred Brown, Manager</i>. I attempt to calm him down with the promise of information about his employee, aka the {BUTCHER == true: Bay Area Butcher}{BUDDY == true: Corpse Buddy}{SCYTHE==true: Scarlet Scythe}.
     ->talkmanager_options
 
 == talkmanager_options ==
@@ -41,10 +35,10 @@ Only two doors to check, what could go wrong? ”Are there any secret passageway
     ->talkmanager_options
 
 == askkiller
-//{CONCL1 == true: I introduce myself as the lead detective, hoping to comfort him in a way, and to possibly get him to derive as much information as possible about his employee.}
-//{CONCL1 == false: I introduce myself as an investigator on this case, refraining from using my name. Now that most of my leads have gone awry, I bear the shame of my name attached to this case. The [killer] unknowingly (or did he?) claimed another victim, my career.}
+{CONCL1 == true: I introduce myself as the lead detective, hoping to comfort him in a way, and to possibly get him to derive as much information as possible about his employee.}
+{CONCL1 == false: I introduce myself as an investigator on this case, refraining from using my name. Now that most of my leads have gone awry, I bear the shame of my name attached to this case. The {BUTCHER == true: Bay Area Butcher}{BUDDY == true: Corpse Buddy}{SCYTHE==true: Scarlet Scythe} unknowingly (or did he?) claimed another victim, my career.}
 
-“Kurt Hutchinson? Nah, it can’t be him. He’s way too feeble to be the [killer]. You sure, officers?” Mr. Brown's balding head gleams as he tilts his head.
+“Kurt Hutchinson? Nah, it can’t be him. He’s way too feeble to be the {BUTCHER == true: Bay Area Butcher}{BUDDY == true: Corpse Buddy}{SCYTHE==true: Scarlet Scythe}. You sure, officers?” Mr. Brown's balding head gleams as he tilts his head.
 
 “Even so, we’ve tracked Kurt down to be an employee here. We need to ask you a few questions.” I also decide to refrain from saying that this alleged serial killer might be inside as we speak.
     ->talkmanager_options
@@ -208,7 +202,7 @@ I step closer, making the first move. I need to respond in the way he might resp
     //->taunthim
 
 == drawgun ==
-Dusk approaches. The sun, now setting, casts its hue on everything. His scared expression transforms into a red, visceral rage. The [killer] has come out to play.
+Dusk approaches. The sun, now setting, casts its hue on everything. His scared expression transforms into a red, visceral rage. The {BUTCHER == true: Bay Area Butcher}{BUDDY == true: Corpse Buddy}{SCYTHE==true: Scarlet Scythe} has come out to play.
 
 In return, I draw my weapon too. // make VAR WEAPON = true
 ~GUN = true
@@ -300,7 +294,7 @@ Before I can react, he aims for my heart. It hits my left lung instead. <i>What 
 == grotesque ==
 "And you want to do it again, so help me help you shake that urge," I plead.
 
-"I don't take help! Especially not from the likes of you." The [killer] leaps off the building, into the night. Kurt Hutchinson falls to his death 4 stories below.
+"I don't take help! Especially not from the likes of you." The {BUTCHER == true: Bay Area Butcher}{BUDDY == true: Corpse Buddy}{SCYTHE==true: Scarlet Scythe} leaps off the building, into the night. Kurt Hutchinson falls to his death 4 stories below.
     ->kurtjumps_end
 
 == gofree == //ending 4
@@ -399,7 +393,7 @@ I lead him down the ladder, putting on a show. I'm being puppeteered around. I o
 
 Who's the bad guy here?
 
-The threat of the [killer] lingers behind in town, as Kurt Hutchinson is driven away.
+The threat of the {BUTCHER == true: Bay Area Butcher}{BUDDY == true: Corpse Buddy}{SCYTHE==true: Scarlet Scythe} lingers behind in town, as Kurt Hutchinson is driven away.
     ->kurtarrested_fluke
 
 == disarm ==
@@ -421,7 +415,7 @@ He falls to the gravel, shaking. I didn't realize how scared he'd be. The person
 ~GUILT = true
 I take this life-or-death opportunity. Taking advantage of his shock, I try to catch his arm, by pushing it away. The momentum is enough.
 
-<i>The [killer] jumped off a meat packing plant rooftop at 8:26:23 PM. Turn to page ◼︎ to continue reading.</i>
+<i>The {BUTCHER == true: Bay Area Butcher}{BUDDY == true: Corpse Buddy}{SCYTHE==true: Scarlet Scythe} jumped off a meat packing plant rooftop at 8:26:23 PM. Turn to page ◼︎ to continue reading.</i>
     ->kurtjumps_end
 
 == placatehim ==
@@ -508,7 +502,7 @@ Smiling a bloody grin, he mouths "A stain on your conscience". His eyes close, a
     ->detshootskurt
 
 == taunthim ==
-Bold acts, bold facts. “So, you’re the [killer], huh? I expected someone with a little more gut and muscle.”
+Bold acts, bold facts. “So, you’re the {BUTCHER == true: Bay Area Butcher}{BUDDY == true: Corpse Buddy}{SCYTHE==true: Scarlet Scythe}, huh? I expected someone with a little more gut and muscle.”
 
 He sniffed, “Are you disappointed?”. He slightly lowers his pistol.
 
@@ -526,7 +520,7 @@ He sniffed, “Are you disappointed?”. He slightly lowers his pistol.
 == kurtarrested ==
 {FREEZER_SEARCHED == true: ->kurtescapes}
 *Read paper.
-    Kurt Hutchinson, 21, male, is revealed to be the [killer]. He worked briefly at Brown's Meathouse as a prepper and deliveryman. He has plead guilty to 5 counts of homicide, and currently awaits life in prison. 
+    Kurt Hutchinson, 21, male, is revealed to be the {BUTCHER == true: Bay Area Butcher}{BUDDY == true: Corpse Buddy}{SCYTHE==true: Scarlet Scythe}. He worked briefly at Brown's Meathouse as a prepper and deliveryman. He has plead guilty to 5 counts of homicide, and currently awaits life in prison. 
 ->DONE
 
 == kurtarrested_fluke == 
@@ -534,7 +528,7 @@ He sniffed, “Are you disappointed?”. He slightly lowers his pistol.
 ->DONE
 
 == kurtescapes_key ==
-<i>*STATIC* This is Officer *unintelligible* we need help! [killer] suspect has escaped. He grabbed the wheel-*STATIC*-ran away.</i>
+<i>*STATIC* This is Officer *unintelligible* we need help! The {BUTCHER == true: Bay Area Butcher}{BUDDY == true: Corpse Buddy}{SCYTHE==true: Scarlet Scythe} suspect has escaped. He grabbed the wheel-*STATIC*-ran away.</i>
 
 <i>*STATIC* Stay calm. Help is on the way. *CHHK*-is your location?</i>
 
@@ -595,4 +589,3 @@ The judge bangs the gavel, and it's finally is over.
 *View report.
     <i>4 officers: G.E., A.S., N.M., J.K., open the hatch and see det. laying down. Later confirmed dead. Suspect is brandishing a gun, and attempts to shoot at officers. Suspect is shot by G.E.</i>
     ->DONE
-->DONE
