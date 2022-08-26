@@ -544,7 +544,7 @@ He sniffed, “Are you disappointed?”. He slightly lowers his pistol.
 == kurtjumps_end ==
 {GUILT == true: ->kurtjumps_guiltyend}
 The typewriter no longer writes to me. <i>Why should it?</i> My luck is better than ever, and the town is rid of the miasma of looming death.
-{TYPEWRITER == true: I look at the typewriter, now smashes in pieces at the bottom of my wastebasket. No more fortunes for me, I can't afford them anymore.}
+{TYPEWRITER == true: I look at the typewriter, now smashed in pieces at the bottom of my wastebasket. I can't afford any more fortunes.}
 ->DONE
 
 == kurtjumps_guiltyend ==
@@ -571,7 +571,7 @@ That's all I was told, and now I've lost the trail again.
 == detshootskurt ==
 Marta Hutchinson and her son are together at last. For three years he's wandered around, confused, not belonging here...
 
-I have nothing more to say. The case is already closed.
+I have nothing more to say, as this is not my story. The case is already closed.
 ->DONE
 
 == detshootskurt_nonfatal ==
