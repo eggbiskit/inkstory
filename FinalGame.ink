@@ -358,7 +358,7 @@ VAR 3RDSHOECLUE3 = false
 * Go outside. 
 ~3RDFOOT = true
     ->examinefootprints
-* Conclude 3rd victim investigation.
++ Conclude 3rd victim investigation.
     ->finalconclusion_check
 
 == examinevictim ==
@@ -392,6 +392,7 @@ I step out to examine the footprints. They were taped off, and sure enough, ther
     
 == finalconclusion_check ==
 {3RDVICTIM == false && 3RDBLOOD == false && 3RDDOOR == false && 3RDFOOT == false: Can't come to a conclusion without reviewing all the evidence.->livingrm_evidence}
+->finalconclusion_3rdvictim
 
 == finalconclusion_3rdvictim ==
 {3RDVICTIM == true && 3RDBLOOD == true && 3RDDOOR == true && 3RDFOOT == true: I pay my respects one last time, then head back to the office. The lab results for the bloody doorknob sat on my desk.}
@@ -608,7 +609,7 @@ I skim the paper, most of which mentioned what I stayed up writing at the crack 
 I hear a familiar click-click of my typewriter. After the previous fortune, I'm not so excited about these 'miracles' anymore.
 
 *Read your fortune.
-HEATHER. CAMPBELL. 7:09:13 AM.
+HEATHER. CAMPBELL. 7:09:13 PM.
     ->chapter8
     
 == chapter8 ==
@@ -617,24 +618,24 @@ HEATHER. CAMPBELL. 7:09:13 AM.
 
 VAR factcheck = 0
 == Part2 == 
-
-Opening the door to my thimble sized office reveals two facts to me. 
     *[First Fact]
         The plants don't seem to be a fan of Maxwell House. Their leaves are more wilted than the day before. I guess the least I could do would be to treat them to Folgers next time.
         ~ factcheck += 1
         ->Part2
     *[Second fact]
-        The clock is ticking. That name, (INSERT NAME), has already come across my desk once. I can't let there be a second time, stamped at the top of an autopsy report.
+        The clock is ticking. That name, Heather Campbell, has already come across my desk once. I can't let there be a second time, stamped at the top of an autopsy report.
         It looks like the only way to keep that from happening is with good old-fashioned detective work. But where to start... //could use start as link for note knot
         ~factcheck += 1
         ->Part2
-    * {factcheck == 2} Review the Note -> The_Note
+    * {factcheck == 2} Review the Note.
+        ->The_Note
     
 ==The_Note==
-... Try not to overthink it. this... thing, whatever it is, hasn't been wrong yet. Each message more accurate than the last, leading now to the latest.
-    *HEATHER CAMPBELL 7:09 PM
+Try not to overthink it. This... thing, whatever it is, hasn't been wrong yet. Each message more accurate than the last, leading now to the latest.
+    *HEATHER. CAMPBELL. 7:09:13 PM.
         Whoever she is, I have to get to her first, and fast. It's already 6:47. An early start only leaves me with 12 hours. //can add in details about knowledge of her importance to case, if established in previous parts, check w grace
-        Let's get to work -> Work
+        Let's get to work!
+            -> Work
 VAR WhiteVisited = false
 VAR BureauVisited = false
 VAR DMVVisited = false
@@ -642,20 +643,20 @@ VAR FrancinPhoneNumber = false
 VAR whatsnext = false
 VAR ScenesVistied = 0
 ==Work==
-            {whatsnext == true: Lets see whats left...}
-            *{WhiteVisited == false && ScenesVistied < 2}[The White Pages]
+            {whatsnext == true: Lets see what's left...}
+            *{WhiteVisited == false && ScenesVistied < 2}[The White Pages.]
                 Would be a good place to start, but Heather isn't exactly a novel name. A quick page through couldn't hurt though.  //too many names, common, but need to narrow things down based on location/factors, revisit other leads?
                 ~whatsnext = true
                 ~WhiteVisited = true
                 ~ScenesVistied +=1
                 ->whitepages
-            *{BureauVisited == false && ScenesVistied < 2}[Records Bureau]
+            *{BureauVisited == false && ScenesVistied < 2}[Records Bureau.]
                 Just downstairs. Dusty place, but gives me a bit more to work with. Let's hope our Heather is in the system. //this would provide criminal records, dud lead? possible restraining order/ witness in other crime
                 ~BureauVisited = true
                 ~whatsnext = true
                 ~ScenesVistied +=1
                 ->RecordsBureau
-            *{DMVVisited == false && ScenesVistied < 2}[DMV]
+            *{DMVVisited == false && ScenesVistied < 2}[DMV.]
                 Only a block away, but in a city like this, public transport is all too common. //want to link this to one possible option
                 ~DMVVisited = true
                 ~whatsnext = true
@@ -664,52 +665,73 @@ VAR ScenesVistied = 0
             *[Review the facts]
                 ->review
             *{ScenesVistied == 2}
-                The realization hits me like a truck. Im nearly out of time... How could I have already used so much? And with two leads still viable? Only one of them is the right Heather Campbell.
+                The realization hits me like a truck. I'm nearly out of time... How could I have already used so much? And with two leads still viable? Only one of them is the right Heather Campbell.
                 Slow down. Take a breath. Review what you know.
                 ->Make_a_choice //note here, if RECORDS DEPT, and WHITEPAGES visited, then GOOD ENDING!, USE intuition, guess killer wouldnt go for a multi person house in suburbia, move to catch on time.
 
 ==DMV==
-    The slow trudge of traffic drives me crazy. I can feel the ticking of seconds on my watch like a second pulse. Finally, the squat building comes into sight.
+    The slow trudge of traffic drives me crazy. I can feel the ticking of seconds on my watch like a second pulse. Finally, the squat concrete building comes into sight. 
     ->The_line
 VAR line = 3
 ==The_line    
-    The DMV, the happiest place on earth.The line. Theres always a line. Today, it seems like the bureacracy angels have heard me, as it's mercifully short. Only {line} people in front of me.
-            *[Take a look around]
+    The DMV, the happiest place on earth, so of course there's a line. There's always a line. Today, it seems like the bureacracy angels have heard me, as it's mercifully short. Only {line} people in front of me.
+        ->line_options
+== line_options
+            +[Take a look around.{line}]
                 It looks about the same as any other DMV. Fluorescent lights hang over worn eye exam posters. The gentle hum of typewriters and hushed clerical work fills the stale air. 
-                ~line -= 1
+                ~line -= 1                
+                ->line_options
                 **About as lively as the morgue... and I should know.
-                    ->The_line
-            *[suppress a cough]
+                    ->line_options
+            +[Suppress a cough.]
                 "Ahe....AH..AHEM!"... An old woman hunched over her walker looks up from a stack of forms to shoot me a piercing glance. 
+                    ->line_options
                 **This place really brings out the best in people.
-                    ->The_line
+                    ->line_options
                 ~line -=1
-                ->The_line
-            *[take a deep breath]
+                ->line_options
+            +[Take a deep breath.]
                 ~line -=1
                 I let the stillness of this place wash over me. These last few days have been a whirlwind, and any moment I can get is more than I deserve. I breathe deep, in through my nose, out through my mouth. I can do this.
                 **I can save her.                
-                    ->The_line
-            *[Approach the Counter]
+                    ->line_options
+            +[Approach the counter.]
                 ++{line > 0}I can't just cut these people, as much as I might like to. They're sticklers about the rules around here.
-                    ->The_line
-                **{line == 0}Approaching the counter, I slide my badge out from where it hangs under my shirt.
-                    "Excuse me maam, I was wondering if you might be able to give me some information regarding a case."
+                ->line_options
+                **{line <= 0}Approaching the counter, I slide my badge out from where it hangs under my shirt.
+                    "Excuse me maam, I was wondering if you might be able to give me some information regarding a case." 
+                    ->womanatcounter
+                    
+== womanatcounter
 The young woman sitting in front of me perks up, a change of pace from the parking ticket disputes she's been dealing with, Im sure.
-"Of course, Officer, How can I help you?"
-                    ***"Are there any vehicles registered under the name Heather Campbell?"
-                        "I can take a look, though it may take a moment. Why don't you have a seat? There's a fresh pot of coffee by the entrance." 
+"Of course, Officer, how can I help you?" She folds her hands and looks at me expactantly.
+    ->counter
+
+== counter
+"Are there any vehicles registered under the name Heather Campbell?"
+
+"I can take a look, though it may take a moment. Why don't you have a seat? There's a fresh pot of coffee by the entrance." 
+
 She stands, and gestures to the corner of the room as she turns.
-"Thanks, I appreciate it." A cup of coffee sounds fantastic. Last night is still taking its toll.
-                        ****ah coffee...
-                            The oil colored liquid shines as bright as gold. No creamer today, I'll take it as strong as I can get it.
-                            *****Nothing like that first sip -> sipinterripted
+
+"Thanks, I appreciate it." A cup of coffee sounds fantastic. Last night is still taking its toll. 
+    ->coffeebreak
+
+== coffeebreak
+*Ah, coffee...
+    Simple pleasures in life are like nothing else. No creamer today, I'll take it as strong as I can get it.
+    ->coffeebreak
+    
+*Nothing like that first sip. I raise the cup to my lips.
+    ->sipinterripted
 
 ==sipinterripted==
 Before I can even lift the paper cup to my lips, I'm interrupted by the woman at the counter, returning with only a single sheet of copy paper. Never a good sign.
 "Well, I dont have much, but at least there is something?"
 It's hard to contain an exasperated sigh.
-*well, lets have it."->FrancineDMV
+
+*Well, let's have it."
+    ->FrancineDMV
                 
 ==FrancineDMV==
 "Well, A woman by the name of Heather Francine Campbell did leave her number with us recently. Something about removing an ex-boyfriend from her registration?"
@@ -721,46 +743,47 @@ It's hard to contain an exasperated sigh.
 Thanks for your help, are you sure theres nothing else important?
 
 *No, I'm sorry. There really wasnt much of anything back there..."
-    **"That's alright, Ill take what I can get"->exitDMV
+    **"That's alright, I'll take what I can get."
+    ->exitDMV
 
 ==exitDMV==
-Well, that wasn't exactly encouraging. At least I can finally have that coffee. Lets see what's left...
+Well, that wasn't exactly encouraging. At least I can finally have that coffee. Let's see what's left...
 ->Work
 
 ==whitepages==
-
 The detective's bible. Organized by last name, it has every residential landline and address in the city. I wouldn't be here without it. I keep a copy in the glove of my car.
 ->car
 
 ==car==
-Walking out to the parking lot, I take inventory of the machine in front of me. A 1970 Capri. She may not be much, but shes mine. 
-    *open the door.
+Walking out to the parking lot, I take inventory of the machine in front of me. A 1970 Capri. She may not be much, but she's mine. 
+    *Open the door.
     ->frontseat
+    
 VAR HeatherFrancineVisited = false
 ==frontseat==
-+take a deep breath //want these sticky options, can loop through options in car until info about both heathers recieved from white pages
++ Take a deep breath. //want these sticky options, can loop through options in car until info about both heathers recieved from white pages
     ->smell
-+reach for the glove compartment
++ Reach for the glove compartment.
     ->glove
 {HeatherFrancineVisited == true && HeatherAvery == true} ->Work
     
 
 ==glove==
-flipping open the glove compartment reveals a thick spine with small, tight print. The White Pages. Dog eared pages covered in pen-marks. This copy has seen some use.
-    *C...C...C...->Campbell
+Flipping open the glove compartment reveals a thick spine with small, tight print. The White Pages. Dog eared pages covered in pen-marks. This copy has seen some use.
+    +C...C...C...->Campbell
 
 ==Campbell==
 The letters tumble out like water, Campbell alone fills up a page.
-    *Campbell, H ->CampbellH
+    +Campbell, H ->CampbellH
 
 ==CampbellH== 
 Campbell, Hailey //only two here are clickable as knots/links, want the others to just take up space, was going to have a fun blurb for each, but word count already swelling
 Campbell, Harriet
 Campbell, Harvy
 Campbell, Henry
-*Campbell, Heather A  -> HeatherAvery
-*Campbell, Heather F ->HeatherFrancine 
-*Close White Pages -> frontseat
++Campbell, Heather A  -> HeatherAvery
++Campbell, Heather F ->HeatherFrancine 
++Close White Pages. -> frontseat
 
 VAR AveryPhoneNumber = true
 VAR notesAddAveryname = true
@@ -769,7 +792,7 @@ VAR notesAddAveryAddress = true
 {BureauVisited == true: Aha. I had a feeling old faithful would come in handy. Heather Avery Campbell, our hit and run witness. Currently Resides at 90 East 18th St, Apt 307... Got a landline here... (678-480-1339)}
 {BureauVisited == false:Hmm. Heather Avery Campbell... At 90 East 18th St, Apt 307... Ah.. got a landline. (678-480-1339)}
 
-*whats next...
++ What's next...
 ->CampbellH
 
 VAR FrancinePhoneNumer = true
@@ -779,7 +802,7 @@ VAR notesAddFrancineName = true
 {BureauVisited == true: Heather Francine Campbell... lets see... Number for her is listed as (678-361-8133), at 19 Leatherwood St.}
 
 ~HeatherFrancineVisited = true
-*whats next...
+*What's next...
 ->CampbellH
 
 ==smell==
@@ -842,7 +865,7 @@ Out of four Heather Campbells in a reasonable radius, two of them are already de
 ->newsoptions
 
 ==addtonotes==
-"got middle names for me? last known addresses?" I ask, hurridley pulling out my notebook.
+"Got middle names for me? Last known addresses?" I ask, hurridley pulling out my notebook.
 ~notesAddAveryname = true
 ~AveryPhoneNumber = true
 "Yea... lets see here... One Heather Avery Campbell, our witness to the hit and run... no address listed, guess there werent too many questions asked there. She did leave a number though.. Listed as: (678-480-1339)"
@@ -871,7 +894,7 @@ number listed as (678-361-8133)
 
 ->Work
 
-==Make_a_choice==
+==Make_a_choice== 
 //notes here! for code, want to incorprate all of the information gathered from each main branch (DMV, Records Bureau, and White Pages), list them as below, same as review the facts. 
 
 {DMVVisited && BureauVisited}
