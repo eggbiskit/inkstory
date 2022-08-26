@@ -1,0 +1,60 @@
+﻿Title: The Fourth
+Team: Ethan Jung, Graham Miller, Charles Qi, Grace Ho
+Github: https://github.com/eggbiskit/inkstory
+
+
+Experience Goal:
+We wanted to write an emotionally compelling detective story, as well as add in a novel aspect of our own. This came in the form of a typewriter, mysteriously typing out clues that add both important information to the player, as well as establish a sense of urgency. Messages are Wanted to focus on player engagement, and make sure that decisions felt both impactful, and character driven. This was largely achieved through shifting perspectives, between the killer, and the detective, though the story is largely played from the detective POV. We wanted to capture both the novel environmental storytelling available from text based games, with the interactivity capabilities from Inked. Worth noting as well was our goal to achieve a reasonable scope here, as much of our initial ideas were slightly out of reach for the bounds of this project, and the timeline provided. 
+
+
+G/G Narrative Stance and Rationale: 
+Story is written in first person, with occasionally switched perspectives between the detective (explicit narrator) and the killer (unreliable narrator). The player primarily plays as the detective and influences their decisions and ultimately the outcome, but as the killer they can only treat the story as a ‘looking glass’, seeing the killer's reasoning and train of thought. The killer also has an inner voice (done in all caps) which serves to protect them from being caught.
+
+
+G/G Story Structure (graphs):
+Part 1 is about introducing the detective and the killer, and about the 3rd victim. We used branch and bottleneck to track conclusions made and whether they were correct or not. In this part, the game will also describe what kind of detective the players are playing through the detective’s interests and thoughts to make the players feel more connected. When switching to killer’s pov, the players will also know more about the killer and catch the killer with these knowledge.
+
+
+Part 2 is largely focused on the detective's efforts to save an unsuspecting victim from our killer before time runs out. Driven by the message time stamped from the typewriter, mostly use a (somewhat modified) branch and bottleneck structure, with main leads that can be visited, and clues that are tracked based on the leads that are visited. These ultimately affect the outcome of Part 3. It is worth noting here that the larger story structure is based around a Cave of Time structure, with variables and clues tracked throughout the story shifting the ultimate endings.
+Part 3 is Largely dependent on Part 2, and utilizes the structure and clues unearthed in Part 2, to set the story path of a potential victim being saved in time by the detective, or becoming the next victim of the killer. Part 3 is also a very significant story point where deciding a victim’s fate and indirectly affects the next victim’s fate as well. Continuing the use of the variable and knot tracking to set the endings available in Part 4.
+Part 4 is about the detective chasing the killer into his workplace, and negotiating with the killer on the roof. Depending on how you interact with the killer (aggressive or passive approach), and what you’ve done/not done previously, you can get different endings.
+
+
+E/C Key Ink Variables / State Tracking:
+  
+
+Player is given the option to decide the nickname of the serial killer from his perspective. This boolean is tracked throughout the entire story.
+
+
+(dmv line decreasing)
+
+
+E/C Ink affordances:
+  
+
+This part is one of the significant story turning points that decide how the story goes. The players need to utilize a limited amount of chances to decide and choose the best choices of action to go for. After choosing an action here, the players will be guided back here and will be given different text reactions based on what they did through that action line. They will be given one last chance to decide their last move, which will decide the ending of this part of the story. To accomplish the goal of this story section, I made it a self-looping know and added conditional logic to it.
+  
+
+In the game, the players will encounter a scene where they need to wait in line to obtain a piece of important information from the DMV department that is necessary to identify the serial killer. To make the players feel interactive, they will be allowed to make multiple actions to spend time while in the line. Every time the players make a move, there will be one less person in the line and one more step closer to obtaining the clue.
+
+
+  
+
+During the killing scene, we created multiple variables to make the situation more complicated. The player’s point of view switches between the detective and the killer. To successfully stop the killer, or for the killer to successfully kill the victim, certain conditions need to be met. Also, to make things more efficient, we have some knots that can be utilized in different routes. 
+
+
+Discourse Example/Demonstration:
+  
+
+In this example, the players need to choose a time that branches into a different storyline that converges eventually.
+  
+
+This is an example of self-looping knot where the players must go through both options to be able to continue to progress.
+Something Cool: Our original idea, which was edited for scoping purposes, was to have two detectives, traveling through time to stop a killer. One rooted primarily in the past, and the other in the future. The perspective switching stayed, but was iterated into the final project here! 
+
+
+Resources used:
+https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md
+This instruction of ink helped us a lot to learn and utilize all sorts of functions to create our game with the expected story structure and progression.
+https://en.wikipedia.org/wiki/Category:1970s_cars
+Used plenty of Wikipedia articles in order to add time-accurate objects and methods for the detective/investigation, as our story was set in 1971.
