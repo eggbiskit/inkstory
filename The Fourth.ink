@@ -1160,7 +1160,8 @@ A badge. A police badge. This is bad. There should be no evidence. They should h
 HOWHOWHOWHOWHOWHOWHOW.
 KEEP MOVING.
 I need it dark, away from the streetlights. The fire exit is on the side of the building. An alley.
-*To the alley.->alley
+*To the alley.
+    ->alley
 
 //notes, heather lives in a walkup next to a diner, killer delivering meat, sees her out the window, flash of hair, looks like mom, knows whos next maybe music reminds him of mom?
 
@@ -1174,7 +1175,8 @@ I need it dark, away from the streetlights. The fire exit is on the side of the 
 //detective pov
 I'm first aware that I'm alive only by the crippling pounding in my head. everything is dark. Slowly, things come into focus. 
 
-*Trash? why am i covered in trash?->realize
+*Trash? why am i covered in trash?
+    ->realize
 
 ==realize==
 It hits me harder than I was last night. All at once. That sunofabitch. He got away. To make things worse, he laid me out in the process.
@@ -1182,27 +1184,33 @@ It hits me harder than I was last night. All at once. That sunofabitch. He got a
 {killerseen}
 Not for long. I remember exactly what he looked like. I couldn't forget if I tried. Short. Unusually short. Must have been 5'5", or a little less. Scrawny to boot, with wiry dark hair. 
 He looked more like a mouse than anything else, the last person you would think would be capable of... this.
-*"Umm... excuse me?"->heatherOK
+*"Umm... excuse me?"
+    ->heatherOK
 
 {not 4thsaved}
 And left me with another mess. Another failure. Another life lost. It's enough to make me scream, but I think my head would split in half if I did.
-*I gotta get up, and peel myself off the pavement.->bloodrush
-*just a second more to collect myself.->rollover
+*I gotta get up, and peel myself off the pavement.
+    ->bloodrush
+*just a second more to collect myself.
+    ->rollover
 
 ==bloodrush==
 Standing up is a slow, and grueling process. My body protests, and every inch of it aches and burns. After some time, I'm vertical again. But not for long. My vision blurs, and my legs drop out from under me.
-*Hello pavement->findID
+*Greet the pavement.
+    ->findID
 
 ==findID==
 My head lands inches from a rusted out dumpster. What a view. My eyes adjusting to the light, I cant believe my luck. The sheer surprise petrifies me. A flash of bright white stands out from the rest of the refuse.
 
-*One of these things is not like the others.->KURTID
+*One of these things is not like the others.
+    ->KURTID
 
 ==KURTID==
 A faded ID, half covered in broken ceramics from last night. It's missing the layer of filth that glazes the rest of the objects around it. A timid face, with a name underneath it.
 Kurt Hutchinson. An employee of Tennyson Meat Processing Co. That plant on the edge of town.
 
-*That face... Those eyes...->remember
+*That face... Those eyes...
+->remember
 
 ==remember==
 It's foggy, but I can't forget. Those eyes, peering back at me from the shadows. Theyre the same. Of course. It's all too obvious. My brain forgets how hard it was hit, and starts racing again.
@@ -1217,7 +1225,8 @@ The drained blood.
 
 The perfect cleanliness.
 
-*Of course. Of course. Of course.->hownotseen
+*Of course. Of course. Of course.
+    ->hownotseen
 
 ==hownotseen==
 How could I not have seen it before? It's all so simple now. Each clue a bright neon sign, all of them pointing to 
@@ -1267,15 +1276,18 @@ I slide onto my side. Watch the shadows stretch.
 My eyes roll up to the figure standing over me. Red hair lit up under the streetlights.
 "Are you ok? I saw you got hit pretty hard."
 
-*"Not hard enough, seems like I'm still here."->snarky
+*"Not hard enough, seems like I'm still here."
+    ->snarky
 
-*"I think so, are you alright?"->caring
+*"I think so, are you alright?"
+    ->caring
 
 ==snarky==
 "Thats not funny, you could have died!" 
 She's oddly concerned for me, considering the circumstances she was just in.
 "Funny you say that, I was thinking the same thing about you." A pause. Guess she's not in the mood for jokes.
-*"Is there anything you can tell me about why this might have happened to you? Who that man was?"->description
+*"Is there anything you can tell me about why this might have happened to you? Who that man was?"
+    ->description
 
 ==caring==
 'Yea I'm fine, or at least I will be when that freak is behind bars. Or worse."
@@ -1291,7 +1303,8 @@ I sure hope that was the case. I press her a little harder. I have to.
 I need something more than just a job. The city is too big, and I'm sure hes already trying to dissapear. A name, A company. Anything.
 "Yea... His uniform. It had a nametag, yaknow, like one of those mechanics? It said... Kurt H."
 
-*Of course. It all becomes clear. The facts align.->thefacts
+*Of course. It all becomes clear. The facts align.
+    ->thefacts
 
 ->chapter10
 == chapter10 ==
@@ -1376,7 +1389,7 @@ I frown, which Mr. Brown misinterprets. “Come on, it’s for safety. Do I need
 I pause for a moment, my stomach twisting in realization. “If it disappeared between when you saw it and the time you last saw us arriving here, then it’s possible Kurt has taken it.” 
 
 Mr. Brown scoffs. “Taken it? There aren’t any bullets in it. I keep those in a separate drawer.” Mr. Brown, if only you were as cautious with safety all the time. My stomach graciously unknots itself.
-->plant_options
+    ->plant_options
 
 VAR FREEZER_SEARCHED = false
 == gotofreezer ==
@@ -1829,12 +1842,12 @@ He sniffed, “Are you disappointed?”. He slightly lowers his pistol.
 
 *View report.
     <i>Hutchinson was handcuffed and put in back of police car 673. Officer G.E. and Chief of Police Q.W. accompanied him in car. Estimated travel time was 20 minutes. Approx. 8 minutes in Hutchinson leapt up and took control of wheel, crashing into roadside ditch. Handcuffs were dangling around wrist. G.E. and Q.W. remained unconscious until 4AM, sustaining minor injures. Hutchinson remains at large.</i>
-    ->DONE
+->DONE
 
 == kurtescapes ==
 *View report.
     <i>Suspect runs away among the officers on scene, most of which were spent searching the freezer. The 5th victim was found, hypothermic. Condition stable. Hutchinson remains at large.</i>
-    ->DONE
+->DONE
 
 == kurtjumps_end ==
 {GUILT == true: ->kurtjumps_guiltyend}
@@ -1883,4 +1896,4 @@ The judge bangs the gavel, and it's finally is over.
 == detdies ==
 *View report.
     <i>4 officers: G.E., A.S., N.M., J.K., open the hatch and see det. laying down. Later confirmed dead. Suspect is brandishing a gun, and attempts to shoot at officers. Suspect is shot by G.E.</i>
-    ->DONE
+->DONE
