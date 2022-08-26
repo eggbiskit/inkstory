@@ -1,4 +1,4 @@
-# inkstory
-for CMPM 148
+# The Fourth (Victim)
+for CMPM 148. Team: Ethan Jung, Graham Miller, Charles Qi, Grace Ho
 
-A pair of time travelers, one a killer and one a dectective try to outwit each other before time runs out.
+The town is washed red, as a lone detetcive chases a up and coming serial killer around town. Meanwhile, the killer relives his trauma over and over again with his victims. The fourth victim becomes the turning point, as the killer's mask is pulled back.
