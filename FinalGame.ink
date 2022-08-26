@@ -609,12 +609,16 @@ I hear a familiar click-click of my typewriter. After the previous fortune, I'm 
 
 *Read your fortune.
 HEATHER. CAMPBELL. 7:09:13 AM.
-->DONE // CUT TO PART 2!
+    ->chapter8
+    
+== chapter8 ==
+<center> <b>CHAPTER 8</b>
+    ->Part2
 
-->Part2
 VAR factcheck = 0
 == Part2 == 
-opening the door to my thimble sized office reveals two facts to me. 
+
+Opening the door to my thimble sized office reveals two facts to me. 
     *[First Fact]
         The plants don't seem to be a fan of Maxwell House. Their leaves are more wilted than the day before. I guess the least I could do would be to treat them to Folgers next time.
         ~ factcheck += 1
@@ -1095,7 +1099,7 @@ Finally. I see the faint outline of his face. A deeply creased brow, dark circle
 
 ==outcold==
 I bring the cold ceramic up, and down. The detective seems shocked, even as he begins to lose consciousness. Showered in a rain of ceramics, He crumples to the concrete. 
-*It is enough. For now. I will dissapear.->part3
+*It is enough. For now. I will dissapear.->chapter9
 
 ==wipefeet==
 Two quick shuffles, it's not enough, but will keep my tracks from being too obvious. It's all I can do.
@@ -1129,6 +1133,11 @@ I need it dark, away from the streetlights. The fire exit is on the side of the 
 
 //
 //note: from detective pov here, want to start at reganing consciousness. middle of the night/early morning? rolls over to lift himself up, finds CLUE(killer work ID)
+
+== chapter9 ==
+<center> <b>CHAPTER 9</b>
+    ->part3
+    
 ==part3==
 //detective pov
 I'm first aware that im alive only by the crippling pounding in my head. everything is dark. Slowly, things come into focus. 
@@ -1210,7 +1219,7 @@ Records again.
 The facts are these. A young Kurt Hutchinson. His father not in the picture. His mother, Marta, killed when he was 6. Caught in the crossfire of a drive by. Kid was right there. A grisly scene.
 Kid bounced around in the system for a while. Not a single foster home lasted longer than a year, until being released at 18. Found work at a cement plant, then moved over to meat processing. Tennyson Meat Packing Co.
 The trail ends there. A sad story, but there's no room for pity here. 
-*It's time to end this.->chaptera
+*It's time to end this.->chapter10
 
 
 ==rollover==
@@ -1247,9 +1256,9 @@ I need something more than just a job. The city is too big, and I'm sure hes alr
 
 *Of course. It all becomes clear. The facts align.->thefacts
 
-->chaptera
-== chaptera ==
-*<center> <b>CHAPTER A</b> // detective arrives at scene
+->chapter10
+== chapter10 ==
+*<center> <b>CHAPTER 10</b> // detective arrives at scene
 I arrive at the meat processing plant on the edge of town. Among the officers, I see a loud, round man standing outside, demanding an explanation from the officers. Soon I will also be questioned, and unfortunately I might hold the answers he wants.
     ->outside_options
 
@@ -1273,7 +1282,7 @@ A stout, beet-red man phases even the toughest officers, it seems. His nametag r
 * Ask about his ‘rogue’ employee. 
     ->askkiller
 * Go inside the plant. 
-    ->chapterb
+    ->chapter11
 
 == askentrances
 “Employees are only permitted to access the front entrance and one of the back entrances,” he says like he read it from a script.
@@ -1292,8 +1301,8 @@ Only two doors to check, what could go wrong? ”Are there any secret passageway
 “Even so, we’ve tracked Kurt down to be an employee here. We need to ask you a few questions.” I also decide to refrain from saying that this alleged serial killer might be inside as we speak.
     ->talkmanager_options
 
-== chapterb ==
-*<center> <b>CHAPTER B</b> // detective goes inside + sees workplace, and learns killer’s dayjob from manager
+== chapter11 ==
+*<center> <b>CHAPTER 11</b> // detective goes inside + sees workplace, and learns killer’s dayjob from manager
     ->checkinside
     
 == checkinside ==
@@ -1391,10 +1400,10 @@ Mr. Brown waves his hand, as if dismissing any preconceived notions I had of the
 He doesn't answer, instead his focus shifting somewhere else.
 Mr. Brown leans to look behind me, cocking his head.
 “Hey, kiddo! What’re you doin’ over there? The police are here to see you!”
-    ->chapterc
+    ->chapter12
 
-== chapterc ==
-*<center> <b>CHAPTER C</b> // killer persp. Hiding between the meat carcasses
+== chapter12 ==
+*<center> <b>CHAPTER 12</b> // killer persp. Hiding between the meat carcasses
     ->imalone
 
 == imalone ==
@@ -1405,9 +1414,9 @@ Hanging sacks of meat and the smell of blood and cold. Count the ribs to pass th
 The detective stumbles his way to me, grasping for anything. Too used to seeing everything in the light, stuck in a mindset he thinks is right. 
 
 I WILL BEND MY RULES JUST FOR YOU.
-    ->chapterd
+    ->chapter13
 
-== chapterd ==
+== chapter13 ==
 *<center> <b>CHAPTER D</b>  // detective persp - see killer in the light for the first time
     ->gotorooftop
 
@@ -1421,10 +1430,10 @@ He doesn't slow down, and I could barely track him in the shadows. He purposely 
 "Wouldn't follow him up if I were you! That hatch opens only from the inside," Mr. Brown calls after me.
 
 *I follow him through the hole. The hatch seals itself, and our fates.
-    ->chaptere
+    ->chapter14
 
-== chaptere ==
-*<center> <b>CHAPTER E</b>  // detective negotiates with killer
+== chapter14 ==
+*<center> <b>CHAPTER 14</b>  // detective negotiates with killer
     ->cornered
 
 VAR GUN = false
